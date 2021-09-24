@@ -125,67 +125,103 @@ Answer:
 
 Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.
 
-Both of the Car_shallow and Car_deep has one member vector pointer tire pressure.
+Both of the Car_shallow and Car_deep has one member vector pointer tires.
 
 - Student_shallow
-  - Write a **default constructor** to initialize id to **nullptr**
-  - Write a **parameterized constructor** to initialize id
+  - Write a **default constructor** to initialize tires to a vector with four 10. 
+  - Write a **parameterized constructor** to initialize vector to desired tire pressures.
 
 - Student_deep
-  - Write a **default constructor** to initialize id to **nullptr**
-  - Write a **parameterized constructor** to initialize id
-  - Write a **destructor** to print "Delete Student_deep!" and delete the integer pointer
+  - Write a **default constructor** to initialize tires to a vector with four 10. 
+  - Write a **parameterized constructor** to initialize vector to desired tire pressures.
+  - Write a **destructor** to print "Delete Car_deep" and delete the integer pointer
   - Write a **copy constructor** with **deep copy**
   - Write a **copy assignment operator** with **deep copy**
+
+Hint: How to create a vector
+tires = new std::vector<int>();
 
 ```c++
 class Car_shallow
 {
 public:
-    vector<int>* id;
+    std::vector<int>* tires;
     Car_shallow();
-    Car_shallow(int);
+    Car_shallow(int,int,int,int);
+    void print();
 };
 class Car_deep
 {
 public:
-    vector<int>* id;
+    std::vector<int>* tires;
     Car_deep();
-    Car_deep(int);
+    Car_deep(int,int,int,int);
     ~Car_deep();
-    Car_deep(const Student_deep&);
-    Car_deep& operator=(const Student_deep&);
+    Car_deep(const Car_deep&);
+    Car_deep& operator=(const Car_deep&);
+    void print();
 };
 ```
 
 Example:
 ```
-Student_shallow a(0);
-Student_shallow b = a;
-Student_shallow c;
+std::cout << "Shallow" << std::endl;
+Car_shallow a(11,12,13,14);
+Car_shallow b = a;
+Car_shallow c;
 c = a;
-cout << *a.id << *b.id << *c.id << endl;
-*c.id = 1;
-cout << *a.id << *b.id << *c.id << endl;
+std::cout << "Before" << std::endl;
+a.print();
+b.print();
+c.print();
+for (auto& p: (*a.tires))
+  p *= 2;
+std::cout << "After" << std::endl;
+a.print();
+b.print();
+c.print();
 
-Student_deep d(0);
-Student_deep e = d;
-Student_deep f;
-f = e;
-cout << *d.id << *e.id << *f.id << endl;
-*e.id = 2;
-*f.id = 1;
-cout << *d.id << *e.id << *f.id << endl;
+std::cout << "Deep" << std::endl;
+Car_deep a_deep(11,12,13,14);;
+Car_deep b_deep = a_deep;
+Car_deep c_deep;
+c_deep = a_deep;
+std::cout << "Before" << std::endl;
+a_deep.print();
+b_deep.print();
+c_deep.print();
+for (auto& p: (*a_deep.tires))
+  p *= 2;
+for (auto& p: (*b_deep.tires))
+  p *= 3;
+std::cout << "After" << std::endl;
+a_deep.print();
+b_deep.print();
+c_deep.print();
 ```
 Expected output:
 ```
-000
-111
-000
-021
-Delete Student_deep!
-Delete Student_deep!
-Delete Student_deep!
+Shallow
+Before
+11 12 13 14 
+11 12 13 14 
+11 12 13 14 
+After
+22 24 26 28 
+22 24 26 28 
+22 24 26 28 
+Deep
+Before
+11 12 13 14 
+11 12 13 14 
+11 12 13 14 
+After
+22 24 26 28 
+33 36 39 42 
+11 12 13 14 
+Delete Car_deep
+Delete Car_deep
+Delete Car_deep
 ```
 
 Write several tests using GTest for your function in [tests/q4student_test.cc](tests/q4_student_test.cc).
@@ -196,43 +232,6 @@ bazel test tests:q4_student_test
 ```
 
 ## Question 5 (20 Points. Medium)
-Write a class to implement how complex number works in mathematics. A complex number can be expressed 
-as **a+bi**, where a and b are real numbers. You are given an incomplete class `Complex`:
-```c++
-class Complex{
- public:
-
-  Complex():real(0), ima(0){};
-  ~Complex();
-  float real;
-  float ima;
-```
-Tasks:
-1. implement a constructor that takes the initial real and imaginary number as 2 parameters.
-2. implement a copy constructor.
-3. implement a copy assignment operator.
-4. the class will support '++' (as postfix) and '--' (as prefix) operators.
-  - `complex++` should increase the real part by 1. 
-  - `--complex` should decrease the real part by 1.
-    - Example: `c=Complex(1,2); c++;`, *c=2+2i*
-    - Example: `c=Complex(1,2); --c;`, *c=0+2i*
-5. The class will support '>' operator, which returns boolean data. To compare two complex numbers x= a + bi and y=c+dj, for x > y should return true if  SQRT(a^2 + b^2) > SQRT(c^2 + d^2) 
-Example: (1+2i) > (0+3i) = (1^2+2^2) > (0^2 + 3^2) = 5 > 9 = false.
-6. the class will support '*' operator, which multiplies a real number:
-  - the function returns a Complex object, which is multiplied both the real and imaginary parts.
-    - Example: `c=Complex(1,2); d=Complex(); d=c*2;`, *d=2+4i*
-7. the class will support '+=' operator on either float number and Complex object:
-  - data type before '+=' must be a Complex object.
-    - Example: `c=Complex(1,2); d=Complex(3,4); c+=d;`, *c=4+6i*
-    - Example: `c=Complex(1,2); float d=2; c+=d;`, *c=3+2i*
-
-
-Write a test using GTest for your finction in [tests/q5_student_test.cc](tests/q5_student_test.cc).
-```
-bazel test tests:q5_student_test
-```
-
-## Question 6 (20 Points. Medium)
 Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as ```bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​)```
 
 An input expression is valid if:
@@ -267,9 +266,9 @@ Example 6:
 Input: "{2k++[5--*j]}"
 Output: true
 
-Write a test using GTest for your finction in [tests/q6_student_test.cc](tests/q6_student_test.cc).
+Write a test using GTest for your finction in [tests/q5_student_test.cc](tests/q5_student_test.cc).
 ```
-bazel test tests:q6_student_test
+bazel test tests:q5_student_test
 ```
 Please compute the time complexity of your implementation.
 
