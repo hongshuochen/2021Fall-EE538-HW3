@@ -243,8 +243,6 @@ An empty string is also considered valid.
 
 You should only check for the validity of brackets based on the above rules, i.e. ‘(‘, ‘)’, ‘[‘, ‘]’, ‘{‘, ‘}’, not the rest of the expression.
 
-Hint: Iterate the input from beginning to end and use a std:stack.
-
 Example 1:
 Input: "(a+b)"
 Output: true
