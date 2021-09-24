@@ -125,7 +125,7 @@ Answer:
 
 Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.
 
-Both of the Student_shallow and Student_deep has one member integer pointer id.
+Both of the Car_shallow and Car_deep has one member vector pointer tire pressure.
 
 - Student_shallow
   - Write a **default constructor** to initialize id to **nullptr**
@@ -139,22 +139,22 @@ Both of the Student_shallow and Student_deep has one member integer pointer id.
   - Write a **copy assignment operator** with **deep copy**
 
 ```c++
-class Student_shallow
+class Car_shallow
 {
 public:
-    int* id;
-    Student_shallow();
-    Student_shallow(int);
+    vector<int>* id;
+    Car_shallow();
+    Car_shallow(int);
 };
-class Student_deep
+class Car_deep
 {
 public:
-    int* id;
-    Student_deep();
-    Student_deep(int);
-    ~Student_deep();
-    Student_deep(const Student_deep&);
-    Student_deep& operator=(const Student_deep&);
+    vector<int>* id;
+    Car_deep();
+    Car_deep(int);
+    ~Car_deep();
+    Car_deep(const Student_deep&);
+    Car_deep& operator=(const Student_deep&);
 };
 ```
 
