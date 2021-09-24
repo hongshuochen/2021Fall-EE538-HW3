@@ -8,33 +8,47 @@ std::set<std::set<int>> CPPLib::twoSum(std::vector<int>& input, int sum){
 
 }
 
-
 // Question 4
+Car_shallow::Car_shallow(){
 
+}
+
+Car_shallow::Car_shallow(int a, int b, int c, int d){
+
+}
+
+void Car_shallow::print(){
+    for (auto& i: (*tires))
+        std::cout << i << " ";
+    std::cout << std::endl; 
+}
+
+Car_deep::Car_deep(){
+}
+
+Car_deep::~Car_deep(){
+
+}
+
+Car_deep::Car_deep(int a, int b, int c, int d){
+
+}
+
+Car_deep::Car_deep(const Car_deep& c){
+
+}
+
+Car_deep& Car_deep::operator=(const Car_deep& c){
+
+}
+
+void Car_deep::print(){
+    for (auto& i: (*tires))
+        std::cout << i << " ";
+    std::cout << std::endl; 
+}
 
 // Question 5
-
-//q5_0
-
-// implement constructor that takes 2 numbers as input parameters
-
-// implement a copy constructor
-
-// implement an assignment operator
-
-//q5_1 complex++
-
-//q5_2 --complex
-
-//q5_3 complex1 > complex2
-
-//q5_4 complex * (an float number)
-
-//q5_5 complex1 += complex2
-
-//q5_6 complex2 += (an float number)
-
-// Question 6
 bool CPPLib::CheckValidExpression(const std::string& a){
     
 }
