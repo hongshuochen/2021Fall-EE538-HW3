@@ -4,7 +4,7 @@
 // Question 2
 
 // Question 3
-std::set<std::set<int>> CPPLib::twoSum(std::vector<int>& input, int sum){
+void CPPLib::mergeArray(std::vector<int>& input1, std::vector<int>& input2){
 
 }
 

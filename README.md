@@ -79,27 +79,38 @@ Answer:
 
 ## Question 3 (20 Points. Easy)
 
-Given a vector of integer ```input```, and an integer ```sum```, return a set of sets ```{a,b}```, where ```a```, ```b``` are in the input vector and ```a + b = sum```, which are the numbers in ```input``` such that they can add up to sum. Function is defined as ```std::set<std::set<int>> twoSum(std::vector<int>& input, int sum)```
+Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `input1` and `input2` respectively. **Merge** `input1` and `input2` into a single array sorted in **non-decreasing order**. Function is defined as ```void mergeArray(std::vector<int>& input1, std::vector<int>& input2)```
 
-- You can assume the vector input doesn't contain duplicated numbers.
-- You can only use numbers in vector once.
-- If there is no answer, the output should return an empty set.
-- You should return **all** results in the input vector if there are multiple answers.
-- **Hint**: you may try unordered_map.
-- Examples:
-  - input = {2,3,4,5}, sum = 7, output = {{2,5},{3,4}}
-  - input = {2,3,-2,5,0}, sum = 0, output = {{2,-2}}
-  - input = {1,5,4,10}, sum = 200, output = {}
+- The final sorted array should not be returned by the function, but instead be *stored inside the array* `input1`. To accommodate this, `input1` has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to `0` and should be ignored. `input2` has a length of `n`.
+
+- There is no case that two inputs are empty.
+
+- You **cannot** use std::merge or std::sort.
+
+- You should come up with an algorithm that runs in **O(m + n)** time.
+
+- **Hint**: you may use two pointers.
+
+  Example 1:
+  input1 = {1, 2, 3, 0, 0, 0}, m = 3, input2 = {2, 5, 6}, n = 3
+  Output: input1 becomes {1, 2, 2, 3, 5, 6}
+
+  Example 2: 
+
+  input1 = {1}, m = 1, input2 = {}, n = 0
+  Output: input1 becomes {1}
+
+  Example 3: 
+
+  input1 = {0}, m = 0, input2 = {1}, n = 1
+  Output: input1 becomes {1}
 
 Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
-Please create your test cases and run the following command to verify the functionality of your program.And what's your function's **time complexity**?
+Please create your test cases and run the following command to verify the functionality of your program. 
+
 ```
 bazel test tests:q3_student_test
 ```
-Please compute the time complexity of your implementation.
-
-Answer:
-
 ## Question 4 (20 Points. Easy)
 
 Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.

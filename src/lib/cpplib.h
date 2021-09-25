@@ -14,7 +14,7 @@
 class CPPLib {
  public:
   //q3
-  std::set<std::set<int>> twoSum(std::vector<int>& input, int sum);
+  void mergeArray(std::vector<int>& input1, std::vector<int>& input2);
   //q6
   bool CheckValidExpression(const std::string& a);
 };
