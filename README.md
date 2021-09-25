@@ -6,9 +6,9 @@
 - For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
 - Deadline: Friday, March 5th by 23:59 pm
-- Total: 110 points. 100 points is considered full credit.
+- Total: 120 points. 100 points is considered full credit.
 
-## Question 1 (10 Points. Easy)
+## Question 1 (20 Points. Easy)
 
 Please compare pros and cons of the following options, and also describe when each option is preferred.
 
