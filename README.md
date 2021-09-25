@@ -20,7 +20,7 @@ Please compare pros and cons of the following options, and also describe when ea
 Answer:
 
 ## Question 2 (30 Points. Easy)
-Part 1: (15 pts)\ 
+Part 1: (15 pts) \
 Please declare a class called `Point` which has private int attributes ```_x```, ```_y``` as its coordinates in `cpplib.h`. Also declare constructors, destructor, and member methods there. \
 Define constructors, destructor, and member methods in `cpplib.cc`. Tips: Definitions outside the class should begin with `Point::`
 - Write a default constructor that initializes `_x`, `_y` to `0`, `0`.
@@ -31,7 +31,7 @@ Define constructors, destructor, and member methods in `cpplib.cc`. Tips: Defini
 - Write `GetX()` and `GetY()` functions to return the private attributes.
 - Write several tests using GTest for your function in [tests/q2_student_test.cc](tests/q2_student_test.cc).
 
-Part 2: (15 pts)\
+Part 2: (15 pts) \
 Assume all constructors and function `PrintPoint()` are given. (You do not need to implement `PrintPoint()`) \
 Assume the destructor will not be called.
 
