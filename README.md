@@ -10,12 +10,12 @@
 
 ## Question 1 (20 Points. Easy)
 
-Please compare pros and cons of the following options, and also describe when each option is preferred.
+Please describe when each option is preferred:
 
 - Passing parameters by value
-- Passing parameters using pointers
-- Passing parameters using references
-- Passing parameters using const references
+- Passing parameters by pointer
+- Passing parameters by reference
+- Passing parameters by const reference
 
 Answer:
 
