@@ -10,7 +10,7 @@
 
 ## Question 1 (20 Points. Easy)
 
-Please describe when each option is preferred:
+Please describe circumstances when each option is preferred:
 
 - Passing parameters by value
 - Passing parameters by pointer
@@ -35,7 +35,17 @@ Part 2: (10 pts) \
 Assume all constructors and function `PrintPoint()` are given. (You do not need to implement `PrintPoint()`) \
 Assume the destructor will not be called.
 
-For each of the following snippets, please write down which function(s) will be called:
+For each of the following snippets, please write down which function(s) (including which constructors, which functions, and passing which format of parameters) will be called:
+
+E.g.:\
+Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point p);`
+```c++
+Point p1(1, 2);
+PrintPoint (p1);
+```
+Answer:\
+1. A parameterized constructor of Class `Point`
+2. `PrintPoint()` passing by value
 
 Snippet 1:
 Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point p);`
