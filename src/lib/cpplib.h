@@ -8,9 +8,9 @@
 #include <unordered_map>
 #include <iostream>
 
-/**
- *  Example class used for GTest demo
- */
+// q2: declare here
+
+
 class CPPLib {
  public:
   //q3
@@ -19,17 +19,6 @@ class CPPLib {
   bool CheckValidExpression(const std::string& a);
 };
 
-//q2
-class Point{	
-private:	
-    int x;	
-    int y;	
-public:	
-    Point();	
-    Point(int);	
-    Point(const Point&);	
-    ~Point();	
-};
 
 // q4
 class Car_shallow
