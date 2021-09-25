@@ -20,78 +20,57 @@ Please compare pros and cons of the following options, and also describe when ea
 Answer:
 
 ## Question 2 (20 Points. Easy)
-Part 1:
-Please write a class called Point which has int values ```x```, ```y``` as its coordinates:
+Part 1:\
+Please write a class called `Point` which has private int attributes ```x```, ```y``` as its coordinates:
 - Write a default constructor that initializes ```x```, ```y``` to ```0```, ```0```.
-- Write a constructor that takes only one parameter. Use that parameter to initialize ```x``` and set ```y``` to ```0```.
+- Write a constructor that takes only one parameter ```x```. Use that parameter to initialize ```x``` and set ```y``` to ```0```.
+- Write a constructor that takes two parameters.
 - Write a copy constructor.
 - Write a destructor that prints “Destructor is called!”.
-- For class Point, you can either set ```x```, ```y``` to be public or if you make them private, write ```GetX()``` and ```GetY()``` functions to return the values. This way you can use their values in your unit tests.
+- For class `Point`, make attributes private, and write ```GetX()``` and ```GetY()``` functions to return the values.
+- Write several tests using GTest for your function in [tests/q2_student_test.cc](tests/q2_student_test.cc).
 
-Part 2:
-For each of the following snippets, please write down what function will be called:
-- You can assume a constructor with 2 parameters exist, which we didn't ask you to implement.
-- For all ```PrintPoint``` function given below, you don’t need to write its definition.
+Part 2:\
+Assume all constructors and function `PrintPoint()` are given. (You do not have to implement `PrintPoint()`) \
+Assume the destructor will not be called.
+
+For each of the following snippets, please write down which function(s) will be called:
 
 Snippet 1:
-```
-Point p1;
-```
-Answer:
-
-Snippet 2:
+Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point p);`
 ```c++
-Point p1(5, 6);
-```
-Answer:
-
-Snippet 3:
-```c++
-Point p1(5, 6);
-Point p2=p1;
-```
-Answer:
-
-Snippet 4:
-Assuming PrintPoint function is given as below:
-```c++
-void PrintPoint(Point p);
 Point p1;
 PrintPoint (p1);
 ```
 Answer:
 
-Snippet 5:
-Assuming PrintPoint function is given as below:
+Snippet 2:
+Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point &p);`
 ```c++
-void PrintPoint(Point &p);
 Point p1;
 PrintPoint(p1);
 ```
 Answer:
 
-Snippet 6:
-Assuming PrintPoint function is given as below:
+Snippet 3:
+Assuming the declaration of `PrintPoint()` is `void PrintPoint(const Point &p);`
 ```c++
-void PrintPoint(const Point &p);
 Point p1;
 PrintPoint(p1);
 ```
 Answer:
 
-Snippet 7:
-Assuming PrintPoint function is given as below:
+Snippet 4:
+Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point *p);`
 ```c++
-void PrintPoint(Point *p);
 Point *ptr;
 PrintPoint(ptr);
 ```
 Answer:
 
-Snippet 8:
-Assuming PrintPoint function is given as below:
+Snippet 5:
+Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point *p);`
 ```c++
-void PrintPoint(Point *p);
 Point *ptr;
 ptr = new Point;
 PrintPoint(ptr);
