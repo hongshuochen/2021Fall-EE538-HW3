@@ -21,10 +21,10 @@ Answer:
 
 ## Question 2 (25 Points. Easy)
 Part 1: (15 pts) \
-Please declare a class called `Point` which has private int attributes ```_x```, ```_y``` as its coordinates in `cpplib.h`. Also declare constructors, destructor, and member methods there. \
+Please declare a class called `Point` which has private int attributes `x_`, `y_` as its coordinates in `cpplib.h`. Also declare constructors, destructor, and member methods there. \
 Define constructors, destructor, and member methods in `cpplib.cc`. Tips: Definitions outside the class should begin with `Point::`
-- Write a default constructor that initializes `_x`, `_y` to `0`, `0`.
-- Write a constructor that takes only one parameter `x`. Use that parameter to initialize `_x` and set `_y` to `0`.
+- Write a default constructor that initializes `x_`, `y_` to `0`, `0`.
+- Write a constructor that takes only one parameter `x`. Use that parameter to initialize `x_` and set `y_` to `0`.
 - Write a constructor that takes two parameters `x` and `y`.
 - Write a copy constructor.
 - Write a destructor that prints “Destructor is called!”.
