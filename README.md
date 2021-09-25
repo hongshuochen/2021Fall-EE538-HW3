@@ -21,13 +21,14 @@ Answer:
 
 ## Question 2 (20 Points. Easy)
 Part 1:\
-Please write a class called `Point` which has private int attributes ```x```, ```y``` as its coordinates:
-- Write a default constructor that initializes ```x```, ```y``` to ```0```, ```0```.
-- Write a constructor that takes only one parameter ```x```. Use that parameter to initialize ```x``` and set ```y``` to ```0```.
-- Write a constructor that takes two parameters.
+Please declare a class called `Point` which has private int attributes ```_x```, ```_y``` as its coordinates in `cpplib.h`. Also declare constructors, destructor, and member methods there.
+Define constructors, destructor, and member methods in `cpplib.cc`. *Definitions outside the class should begin with `Point::` *
+- Write a default constructor that initializes `_x`, `_y` to `0`, `0`.
+- Write a constructor that takes only one parameter `x`. Use that parameter to initialize `_x` and set `_y` to `0`.
+- Write a constructor that takes two parameters `x` and `y`.
 - Write a copy constructor.
 - Write a destructor that prints “Destructor is called!”.
-- For class `Point`, make attributes private, and write ```GetX()``` and ```GetY()``` functions to return the values.
+- Write `GetX()` and `GetY()` functions to return the private attributes.
 - Write several tests using GTest for your function in [tests/q2_student_test.cc](tests/q2_student_test.cc).
 
 Part 2:\
