@@ -37,15 +37,14 @@ Assume the destructor will not be called.
 
 For each of the following snippets, please write down which function(s) (including which constructors, which functions, and passing which format of parameters) will be called:
 
-E.g. Snippet:\
-Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point p);`
+E.g. Snippet: Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point &p);`
 ```c++
 Point p1(1, 2);
 PrintPoint (p1);
 ```
 Answer: 
 1. A parameterized constructor of Class `Point`
-2. `PrintPoint()` passing by value
+2. `PrintPoint()` passing by reference
 
 Snippet 1:
 Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point p);`
