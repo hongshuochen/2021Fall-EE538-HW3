@@ -92,6 +92,7 @@ Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order
 - **Hint**: you may use two pointers.
 
   Example 1:
+  
   input1 = {1, 2, 3, 0, 0, 0}, m = 3, input2 = {2, 5, 6}, n = 3
   Output: input1 becomes {1, 2, 2, 3, 5, 6}
 
