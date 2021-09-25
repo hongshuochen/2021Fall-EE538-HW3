@@ -32,7 +32,7 @@ Define constructors, destructor, and member methods in `cpplib.cc`. Tips: Defini
 - Write several tests using GTest for your function in [tests/q2_student_test.cc](tests/q2_student_test.cc).
 
 Part 2:\
-Assume all constructors and function `PrintPoint()` are given. (You do not have to implement `PrintPoint()`) \
+Assume all constructors and function `PrintPoint()` are given. (You do not need to implement `PrintPoint()`) \
 Assume the destructor will not be called.
 
 For each of the following snippets, please write down which function(s) will be called:
