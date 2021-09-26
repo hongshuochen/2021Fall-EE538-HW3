@@ -21,6 +21,43 @@ Answer:
 
 ## Question 2 (10 Points. Easy)
 
+In what cases is it preferred to use a list rather than a vector? (Let’s assume cache miss is not an issue).
+
+Answer:
+
+What is the difference between std::string and std::vector?
+
+Answer:
+
+What is the difference between std::queue, std::stack, and std::vector?
+
+Answer:
+
+Suppose we want to sort a std::vector<int>, but we cannot use std::sort. Instead, can we use std::set<int> to sort the items in the vector by putting them in the set first? Please explain under what conditions we can or we cannot?
+
+Answer:
+ 
+## Question 3 (15 Points. Easy)
+
+Define a new enum type `Command` that can have the following values: `kSort`, `kFind`, `kErase`. Then define a new enum type `ResultCode` that can have the following values: `kSuccess`, `kIndexError`, `kFindError`
+
+Implement in the following function
+
+`ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)`
+
+- If `Command` is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
+- If `Command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [left, right); otherwise, it returns `kFindError`
+- If `command` is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
+- Hints: you can use `std::sort()` and `std::find()`. Use a switch/case statement.
+ 
+Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
+Please create your test cases and run the following command to verify the functionality of your program. 
+```
+bazel test tests:q3_student_test
+```
+
+## Question 4 (10 Points. Medium)
+
 Now we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
 ```c++
 class Point {
@@ -86,7 +123,7 @@ ptr->~Point();
 ```
 Answer:
 
-## Question 3 (20 Points. Easy)
+## Question 5 (20 Points. Easy)
 
 Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `input1` and `input2` respectively. **Merge** `input1` and `input2` into a single array sorted in **non-decreasing order**. Function is defined as ```void mergeArray(std::vector<int>& input1, std::vector<int>& input2)```
 
@@ -115,13 +152,12 @@ Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order
   input1 = {0}, m = 0, input2 = {1}, n = 1
   Output: input1 becomes {1}
 
-Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
+Write several tests using GTest for your function in [tests/q5_student_test.cc](tests/q5_student_test.cc).
 Please create your test cases and run the following command to verify the functionality of your program. 
-
 ```
-bazel test tests:q3_student_test
+bazel test tests:q5_student_test
 ```
-## Question 4 (20 Points. Easy)
+## Question 6 (20 Points. Easy)
 
 Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.
 
@@ -164,7 +200,7 @@ public:
 ```
 
 Example:
-```
+```c++
 std::cout << "Shallow" << std::endl;
 Car_shallow a(11,12,13,14);
 Car_shallow b = a;
@@ -224,14 +260,14 @@ Delete Car_deep
 Delete Car_deep
 ```
 
-Write several tests using GTest for your function in [tests/q4student_test.cc](tests/q4_student_test.cc).
+Write several tests using GTest for your function in [tests/q6_student_test.cc](tests/q6_student_test.cc).
 
 Please create your test cases and run the following command to verify the functionality of your program. You don't need to test the destructor.
 ```
-bazel test tests:q4_student_test
+bazel test tests:q6_student_test
 ```
 
-## Question 5 (20 Points. Medium)
+## Question 7 (20 Points. Medium)
 Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as ```bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​)```
 
 An input expression is valid if:
@@ -266,9 +302,9 @@ Example 6:
 Input: "{2k++[5--*j]}"
 Output: true
 
-Write a test using GTest for your finction in [tests/q5_student_test.cc](tests/q5_student_test.cc).
+Write a test using GTest for your finction in [tests/q7_student_test.cc](tests/q7_student_test.cc).
 ```
-bazel test tests:q5_student_test
+bazel test tests:q7_student_test
 ```
 Please compute the time complexity of your implementation.
 
