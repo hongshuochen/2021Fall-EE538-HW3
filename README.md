@@ -36,6 +36,8 @@ void PrintPointByRef(Point &p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << 
 ```
 For each of the following snippets, please write down which function(s) will be called (including constructors):
 
+If there is no function to be called, also provide your reason.
+
 E.g. Snippet: 
 ```c++
 Point p1(1, 2);
@@ -44,6 +46,8 @@ PrintPointByRef(p1);
 Answer: 
 1. Parameterized constructor of Class `Point`
 2. `PrintPointByRef()`
+
+It's your turn:
 
 Snippet 1:
 ```c++
