@@ -164,10 +164,11 @@ bazel test tests:q5_student_test
 ## Question 6 (20 Points. Easy)
 Implement a class called `MyString` similar to std::String. The class have a dynamic array for data and an int variable for size. Please write functions below
  - constructor: initialize `data` to nullptr and `size` to 0.
- - destructor: release the memory for 'data' and print "Delete!".
+ - destructor: delete the dynamically allocated memory. Be careful to only delete if you previously created dynamic memory allocation. How can you detect this?
  - copy constructor: copy the data and size using deep copy!
- - push_back: append a character!
- - pop_back: remove the last character!
+ - push_back: add a new item to the end of the string. Note that you first need to create a new dynamic array for the new size, and get rid of the previously allocated memory.
+ - pop_back: Remove the last item. Don't forget to handle the case where the string is empty.
+ 
  Hint: resize the char array and use std::copy()!
 
 ```c++
