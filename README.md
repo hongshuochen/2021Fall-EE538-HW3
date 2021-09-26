@@ -7,6 +7,7 @@
 - For submission, please push your answers to Github before the deadline.
 - Deadline: Tuesday, October 5th, at 11:59 PM (PDT)
 - Total: 120 points. 100 points is considered full credit.
+- No late acceptance will be accepted for this assignment since the solutions will be provided right after the deadline.
 
 ## Question 1 (10 Points. Easy)
 
