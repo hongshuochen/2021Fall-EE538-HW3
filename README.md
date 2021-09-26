@@ -266,7 +266,7 @@ Example 6:
 Input: "{2k++[5--*j]}"
 Output: true
 
-Write a test using GTest for your finction in [tests/q7_student_test.cc](tests/q7_student_test.cc).
+Write a test using GTest for your function in [tests/q7_student_test.cc](tests/q7_student_test.cc).
 ```
 bazel test tests:q7_student_test
 ```
@@ -352,6 +352,11 @@ public:
     };
    ```
 
+
+Write a test using GTest for your function in [tests/q8_student_test.cc](tests/q8_student_test.cc).
+```
+bazel test tests:q8_student_test
+```
 # Optional
 The following questions are optional. This means you do not have to submit the answer to them. They will not be graded, and we may not provide solutions for them. They are here so that you can practice on your own.
 
