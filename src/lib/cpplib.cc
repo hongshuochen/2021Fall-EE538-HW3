@@ -29,6 +29,18 @@ void MyString::pop_back() {
 
 }
 
+int MyString::size() {
+
+}
+
+char* MyString::data() {
+
+}
+
+bool MyString::empty() {
+
+}
+
 // Question 5
 bool CPPLib::CheckValidExpression(const std::string& a){
     
