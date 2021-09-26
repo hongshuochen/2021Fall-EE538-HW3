@@ -11,7 +11,7 @@
 class CPPLib {
  public:
   //q3
-  
+
   //q5
   void mergeArray(std::vector<int>& input1, std::vector<int>& input2);
   //q8
@@ -31,5 +31,31 @@ public:
     void push_back(char);
     void pop_back();
 };
+
+
+struct ListNode {
+  int val;
+  ListNode *next;
+  ListNode(int x) : val(x), next(nullptr) {}
+};
+
+
+
+class SinglyLinkedList {
+public:
+  SinglyLinkedList() { head_ = nullptr; }
+  bool empty();
+  int size();
+  void push_back(int i);
+  void pop_back();
+  int back();
+  ListNode *GetBackPointer();
+  ListNode *GetIthPointer(int i);
+  void print();
+
+  ListNode *head_;
+  int my_size;
+};
+
 
 #endif
