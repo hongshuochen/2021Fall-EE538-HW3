@@ -22,7 +22,7 @@ Answer:
 ## Question 2 (10 Points. Easy)
 
 Now we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
-```
+```c++
 class Point {
  public:
   int x_;
