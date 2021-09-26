@@ -47,9 +47,9 @@ Implement in the following function
 ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)
 ```
 
-- If `command` is `kSort`, it sorts items [`left`, `right`) in the vector and returns `kSuccess` if the given `left` and `right` indices were valid; otherwise, returns `kIndexError`
-- If `command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [`left`, `right`); otherwise, it returns `kFindError`
-- If `command` is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
+- If command is `kSort`, it sorts items [`left`, `right`) in the vector and returns `kSuccess` if the given `left` and `right` indices were valid; otherwise, returns `kIndexError`
+- If command is `kFind`, returns `kSuccess` if value `find_value` existed in the range [`left`, `right`); otherwise, it returns `kFindError`
+- If command is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
 - Hints: you can use `std::sort()` and `std::find()`. Use a switch/case statement.
  
 Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
