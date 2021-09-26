@@ -43,11 +43,13 @@ Define a new enum type `Command` that can have the following values: `kSort`, `k
 
 Implement in the following function
 
-`ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)`
+```c++
+ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)
+```
 
-- If command is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
-- If command is `kFind`, returns `kSuccess` if value `find_value` exists in the range [left, right); otherwise, it returns `kFindError`
-- If command is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
+- If `command` is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
+- If `command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [left, right); otherwise, it returns `kFindError`
+- If `command` is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
 - Hints: you can use `std::sort()` and `std::find()`. Use a switch/case statement.
  
 Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
@@ -58,7 +60,7 @@ bazel test tests:q3_student_test
 
 ## Question 4 (10 Points. Medium)
 
-Suppose we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
+Suppose we have a class `Point`, and functions `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
 ```c++
 class Point {
  public:
@@ -123,7 +125,7 @@ ptr->~Point();
 ```
 Answer:
 
-## Question 5 (?? Points. Easy)
+## Question 5 (15 Points. Easy)
 
 Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `input1` and `input2` respectively. **Merge** `input1` and `input2` into a single array sorted in **non-decreasing order**. Function is defined as ```void mergeArray(std::vector<int>& input1, std::vector<int>& input2)```
 
@@ -135,21 +137,24 @@ Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order
 
 - You should come up with an algorithm that runs in **O(m + n)** time.
 
-- **Hint**: you may use two pointers.
+- **Hint**: you may use index variables that keeps track of the index in each vector (like we did on the discussion).
 
   Example 1:
   
   input1 = {1, 2, 3, 0, 0, 0}, m = 3, input2 = {2, 5, 6}, n = 3
+
   Output: input1 becomes {1, 2, 2, 3, 5, 6}
 
   Example 2: 
 
   input1 = {1}, m = 1, input2 = {}, n = 0
+
   Output: input1 becomes {1}
 
   Example 3: 
 
   input1 = {0}, m = 0, input2 = {1}, n = 1
+
   Output: input1 becomes {1}
 
 Write several tests using GTest for your function in [tests/q5_student_test.cc](tests/q5_student_test.cc).
@@ -213,8 +218,11 @@ Please create your test cases and run the following command to verify the functi
 bazel test tests:q6_student_test
 ```
 
-## Question 7 (15 Points. Medium)
-Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as ```bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​)```
+## Question 7 (20 Points. Medium)
+Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as 
+```c++
+bool CheckValidExpression (const string& a)
+```
 
 An input expression is valid if:
 
@@ -337,10 +345,27 @@ public:
 
 # Optional
  
-## Question 9 (Medium)
+## Question 1 (Medium)
 
 Write your own class to recreate std::queue. Use a private member of type std::vector and add member functions such as push, pop, top, size, and empty. Also, implement the copy constructor.
 
-## Question 10 (Medium)
+## Question 2 (Medium)
  
-Repeat Question 8 for a stack.
+Repeat Question 1 for a stack.
+
+
+## Question 3 (Medium)
+
+Repeat the previous questions for std::queue and std::stack, but instead of a vector, use the `SinglyLinkedList` class to store the data.
+
+## Question 4 (Medium)
+
+Add a function called `reverse` to `SinglyLinkedList` to:
+  - Return a new list that is the reverse of the original list.
+  - Reverses the original list in place.
+
+## Question 5  (Medium)
+
+Create a new class called `DoublyLinkedList`, similar to `SinglyLinkedList` in which each element has both a `next`, and `previous` pointers. Rewrite all the methods from `SinglyLinkedList` for `DoublyLinkedList`.  
+
+

@@ -11,7 +11,7 @@
 class CPPLib {
  public:
   //q3
-  ResultCode VectorCommander(std::vector<int>& v, int left, int right, int find_value, Command command);
+  
   //q5
   void mergeArray(std::vector<int>& input1, std::vector<int>& input2);
   //q8
@@ -20,24 +20,16 @@ class CPPLib {
 
 
 // q6
-class Car_shallow
+class MyString
 {
 public:
-    std::vector<int>* tires;
-    Car_shallow();
-    Car_shallow(int,int,int,int);
-    void print();
-};
-class Car_deep
-{
-public:
-    std::vector<int>* tires;
-    Car_deep();
-    Car_deep(int,int,int,int);
-    ~Car_deep();
-    Car_deep(const Car_deep&);
-    Car_deep& operator=(const Car_deep&);
-    void print();
+    char* data;
+    int size;
+    MyString();
+    ~MyString();
+    MyString(const MyString&);
+    void push_back(char);
+    void pop_back();
 };
 
 #endif
