@@ -52,7 +52,7 @@ It's your turn:
 Snippet 1:
 ```c++
 Point p1;
-Point p2 = P1;
+Point p2 = p1;
 ```
 Answer:
 
