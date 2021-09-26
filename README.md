@@ -6,9 +6,9 @@
 - For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
 - Deadline: Tuesday, October 5th, at 11:59 PM (PDT)
-- Total: 105 points. 100 points is considered full credit.
+- Total: 120 points. 100 points is considered full credit.
 
-## Question 1 (10 Points. Easy)
+## Question 1 (5 Points. Easy)
 
 Please describe circumstances when each option is preferred:
 
@@ -19,7 +19,7 @@ Please describe circumstances when each option is preferred:
 
 Answer:
 
-## Question 2 (10 Points. Easy)
+## Question 2 (5 Points. Easy)
 
 In what cases is it preferred to use a list rather than a vector? (Let’s assume cache miss is not an issue).
 
