@@ -5,7 +5,7 @@
 - For non-coding questions, you will find **Answer** below each question. Please write your answer there.
 - For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
-- Deadline: 11:59 PM, Tuesday, October 5th (PDT)
+- Deadline: Tuesday, October 5th, at 11:59 PM (PDT)
 - Total: 105 points. 100 points is considered full credit.
 
 ## Question 1 (10 Points. Easy)
@@ -21,7 +21,7 @@ Answer:
 
 ## Question 2 (10 Points. Easy)
 
-Now we have a class `Point`, and function `PrintPoint()`:
+Now we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
 ```
 class Point {
  public:
@@ -34,7 +34,7 @@ void PrintPointByVal(Point p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << s
 void PrintPointByPtr(Point *p) { std::cout << "x=" << p->x_ << ", y=" << p->y_ << std::endl; }
 void PrintPointByRef(Point &p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << std::endl; }
 ```
-For each of the following snippets, please write down which function(s) will be called (including which constructors, which functions):
+For each of the following snippets, please write down which function(s) will be called (including constructors):
 
 E.g. Snippet: 
 ```c++
