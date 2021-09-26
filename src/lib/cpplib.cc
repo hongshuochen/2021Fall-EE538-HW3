@@ -2,9 +2,6 @@
 #include "limits"
 
 // Question 3
-ResultCode CPPLib::VectorCommander(std::vector<int>& v, int left, int right, int find_value, Command command){
-
-}
 
 // Question 5
 void CPPLib::mergeArray(std::vector<int>& input1, std::vector<int>& input2){
@@ -12,46 +9,113 @@ void CPPLib::mergeArray(std::vector<int>& input1, std::vector<int>& input2){
 }
 
 // Question 6
-Car_shallow::Car_shallow(){
+MyString::MyString() {
 
 }
 
-Car_shallow::Car_shallow(int a, int b, int c, int d){
+MyString::~MyString() {
 
 }
 
-void Car_shallow::print(){
-    for (auto& i: (*tires))
-        std::cout << i << " ";
-    std::cout << std::endl; 
-}
-
-Car_deep::Car_deep(){
-}
-
-Car_deep::~Car_deep(){
+MyString::MyString(const MyString& rhs) {
 
 }
 
-Car_deep::Car_deep(int a, int b, int c, int d){
+void MyString::push_back(char ch) {
 
 }
 
-Car_deep::Car_deep(const Car_deep& c){
+void MyString::pop_back() {
 
-}
-
-Car_deep& Car_deep::operator=(const Car_deep& c){
-
-}
-
-void Car_deep::print(){
-    for (auto& i: (*tires))
-        std::cout << i << " ";
-    std::cout << std::endl; 
 }
 
 // Question 5
 bool CPPLib::CheckValidExpression(const std::string& a){
     
+}
+
+// Question 8
+
+bool SinglyLinkedList::empty() { return head_ == nullptr; }
+
+int SinglyLinkedList::size() {
+  int s = 0;
+  if (empty()) {
+    return s;
+  }
+  ListNode *p = head_;
+  ListNode *p_prev;
+  while (p != nullptr) {
+    s++;
+    p_prev = p;
+    p = p->next;
+  }
+
+  return s;
+}
+
+ListNode *SinglyLinkedList::GetBackPointer() {
+  if (empty()) {
+    return head_;
+  }
+  ListNode *p = head_;
+  while (p->next != nullptr) {
+    p = p->next;
+  }
+  return p;
+}
+
+ListNode *SinglyLinkedList::GetIthPointer(int i) {
+  if (empty()) {
+    return head_;
+  }
+
+  ListNode *p = head_;
+  ListNode *p_prev = head_;
+  int max_size = size();
+  int count = 0;
+  while (p != nullptr && count < max_size && count <= i) {
+    p_prev = p;
+    p = p->next;  // Dangerous!! If p is null, then p->next = crash!!
+    count++;
+  }
+
+  if (i < max_size) {
+    return p_prev;
+  } else {
+    return nullptr;
+  }
+}
+
+void SinglyLinkedList::push_back(int i) {
+  // If list empty, create a new node and point head_ to it
+  if (empty()) {
+    head_ = new ListNode(i);
+    return;
+  }
+  // If not empty, go to the end, create a new node and point the last item to
+  // it
+  auto back_ptr = GetBackPointer();
+  auto newNode = new ListNode(i);
+  back_ptr->next = newNode;
+  my_size++;
+}
+
+void SinglyLinkedList::pop_back() {}
+int SinglyLinkedList::back() { return 0; }
+void SinglyLinkedList::print() {
+  std::cout << "{";
+  if (!empty()) {
+    ListNode *p = head_;
+    ListNode *p_prev;
+    while (p != nullptr) {
+      p_prev = p;
+      std::cout << p->val;
+      p = p->next;
+      if (p) {
+        std::cout << ", ";
+      }
+    }
+    std::cout << "}" << std::endl;
+  }
 }
