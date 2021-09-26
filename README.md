@@ -123,7 +123,7 @@ ptr->~Point();
 ```
 Answer:
 
-## Question 5 (20 Points. Easy)
+## Question 5 (?? Points. Easy)
 
 Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `input1` and `input2` respectively. **Merge** `input1` and `input2` into a single array sorted in **non-decreasing order**. Function is defined as ```void mergeArray(std::vector<int>& input1, std::vector<int>& input2)```
 
@@ -157,7 +157,7 @@ Please create your test cases and run the following command to verify the functi
 ```
 bazel test tests:q5_student_test
 ```
-## Question 6 (20 Points. Easy)
+## Question 6 (?? Points. Easy)
 
 Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.
 
@@ -267,7 +267,7 @@ Please create your test cases and run the following command to verify the functi
 bazel test tests:q6_student_test
 ```
 
-## Question 7 (20 Points. Medium)
+## Question 7 (?? Points. Medium)
 Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as ```bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​)```
 
 An input expression is valid if:
@@ -310,7 +310,7 @@ Please compute the time complexity of your implementation.
 
 Answer:
 
-## Question 8 (20 Points. Medium)
+## Question 8 (?? Points. Medium)
 
 Assume `ListNode`, `SinglyLinkedList` are given and all member functions are already implemented:
 
@@ -388,10 +388,10 @@ public:
      float standard_deviation;
     };
    ```
-## Question 9 (20 Points. Medium)
+## Question 9 (Bonus 10 Points. Medium)
  
 Repeat Question 8 for a stack
  
-## Question 10 (20 Points. Medium)
+## Question 10 (Bonus 10 Points. Medium)
 
 Write your own class to recreate std::queue. Use a private member of type std::vector and add member functions such as push, pop, top, size, and empty. Also, implement the copy constructor.
