@@ -47,8 +47,8 @@ Implement in the following function
 ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)
 ```
 
-- If `command` is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
-- If `command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [left, right); otherwise, it returns `kFindError`
+- If `command` is `kSort`, it sorts items [`left`, `right`) in the vector and returns `kSuccess` if the given `left` and `right` indices were valid; otherwise, returns `kIndexError`
+- If `command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [`left`, `right`); otherwise, it returns `kFindError`
 - If `command` is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
 - Hints: you can use `std::sort()` and `std::find()`. Use a switch/case statement.
  
@@ -125,7 +125,7 @@ ptr->~Point();
 ```
 Answer:
 
-## Question 5 (?? Points. Easy)
+## Question 5 (?? Points. Medium)
 
 Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `input1` and `input2` respectively. **Merge** `input1` and `input2` into a single array sorted in **non-decreasing order**. Function is defined as ```void mergeArray(std::vector<int>& input1, std::vector<int>& input2)```
 
