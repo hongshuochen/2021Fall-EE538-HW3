@@ -1,8 +1,8 @@
 
 # HW3 EE538 - Computing Principles for Electrical Engineers
 
-- Plesae clone the repository, edit [README.md](README.md) to answer the questions, and fill up functions to finish the hw.
-- For non-coding quesitions, you will find **Answer** below each question. Please write your answer there.
+- Please clone the repository, edit [README.md](README.md) to answer the questions, and fill up functions to finish the hw.
+- For non-coding questions, you will find **Answer** below each question. Please write your answer there.
 - For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
 - Deadline: Friday, March 5th by 23:59 pm
