@@ -36,7 +36,7 @@ Assume all parameters in class `Point` are public.
 Assume all constructors and function `PrintPoint()` are given. (You do not need to implement `PrintPoint()`) \
 Assume the destructor will not be called.
 
-For each of the following snippets, please write down which function(s) (including which constructors, which functions, and passing which format of parameters) will be called:
+For each of the following snippets, please write down which function(s) will be called (including which constructors, which functions, and passing which format of parameters):
 
 E.g. Snippet: Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point &p);`
 ```c++
