@@ -1,14 +1,17 @@
 #include "cpplib.h"
 #include "limits"
 
-// Question 2
-
 // Question 3
+ResultCode CPPLib::VectorCommander(std::vector<int>& v, int left, int right, int find_value, Command command){
+
+}
+
+// Question 5
 void CPPLib::mergeArray(std::vector<int>& input1, std::vector<int>& input2){
 
 }
 
-// Question 4
+// Question 6
 Car_shallow::Car_shallow(){
 
 }
