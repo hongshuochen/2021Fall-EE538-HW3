@@ -43,10 +43,12 @@ Define a new enum type `Command` that can have the following values: `kSort`, `k
 
 Implement in the following function
 
-`ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)`
+```c++
+ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)
+```
 
-- If `Command` is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
-- If `Command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [left, right); otherwise, it returns `kFindError`
+- If `command` is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
+- If `command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [left, right); otherwise, it returns `kFindError`
 - If `command` is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
 - Hints: you can use `std::sort()` and `std::find()`. Use a switch/case statement.
  
@@ -58,7 +60,7 @@ bazel test tests:q3_student_test
 
 ## Question 4 (10 Points. Medium)
 
-Now we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
+Now we have a class `Point`, and functions `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
 ```c++
 class Point {
  public:
@@ -268,7 +270,10 @@ bazel test tests:q6_student_test
 ```
 
 ## Question 7 (?? Points. Medium)
-Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as ```bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​)```
+Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as 
+```c++
+bool CheckValidExpression (const string& a)
+```
 
 An input expression is valid if:
 
