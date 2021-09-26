@@ -22,7 +22,7 @@ Answer:
 
 ## Question 2 (10 Points. Easy)
 
-- In what cases is it preferred to use a list rather than a vector? (Let’s assume cache miss is not an issue).
+- In what cases is it preferred to use a list rather than a vector (Let’s assume cache miss is not an issue)?
 
 Answer:
 
@@ -34,7 +34,7 @@ Answer:
 
 Answer:
 
-- Suppose we want to sort a std::vector<int>, but we cannot use std::sort. Instead, can we use std::set<int> to sort the items in the vector by putting them in the set first? Please explain under what conditions we can or we cannot?
+- Suppose we want to sort a std::vector<int>, but we cannot use std::sort. Instead, can we use std::set<int> to sort the items in the vector by putting them in the set first and then putting them back in the vector? Please explain under what conditions we can or we cannot?
 
 Answer:
  
