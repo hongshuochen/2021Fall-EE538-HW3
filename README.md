@@ -137,21 +137,24 @@ Given two integer arrays `input1` and `input2`, sorted in **non-decreasing order
 
 - You should come up with an algorithm that runs in **O(m + n)** time.
 
-- **Hint**: you may use two pointers.
+- **Hint**: you may use index variables that keeps track of the index in each vector (like we did on the discussion).
 
   Example 1:
   
   input1 = {1, 2, 3, 0, 0, 0}, m = 3, input2 = {2, 5, 6}, n = 3
+
   Output: input1 becomes {1, 2, 2, 3, 5, 6}
 
   Example 2: 
 
   input1 = {1}, m = 1, input2 = {}, n = 0
+
   Output: input1 becomes {1}
 
   Example 3: 
 
   input1 = {0}, m = 0, input2 = {1}, n = 1
+
   Output: input1 becomes {1}
 
 Write several tests using GTest for your function in [tests/q5_student_test.cc](tests/q5_student_test.cc).
