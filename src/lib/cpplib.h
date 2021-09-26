@@ -8,11 +8,10 @@
 #include <unordered_map>
 #include <iostream>
 
-// q2: declare here
-
-
 class CPPLib {
  public:
+  //q3
+  ResultCode VectorCommander(std::vector<int>& v, int left, int right, int find_value, Command command);
   //q3
   void mergeArray(std::vector<int>& input1, std::vector<int>& input2);
   //q6
