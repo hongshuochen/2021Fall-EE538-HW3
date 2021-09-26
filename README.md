@@ -39,7 +39,8 @@ Answer:
  
 ## Question 3 (15 Points. Easy)
 
-Define a new enum type `Command` that can have the following values: `kSort`, `kFind`, `kErase`. Then define a new enum type `ResultCode` that can have the following values: `kSuccess`, `kIndexError`, `kFindError`
+Define a new enum type `Command` that can 
+ the following values: `kSort`, `kFind`, `kErase`. Then define a new enum type `ResultCode` that can have the following values: `kSuccess`, `kIndexError`, `kFindError`
 
 Implement in the following function
 
@@ -162,26 +163,33 @@ Please create your test cases and run the following command to verify the functi
 bazel test tests:q5_student_test
 ```
 ## Question 6 (20 Points. Easy)
-Implement a class called `MyString` similar to std::String. The class have a dynamic array for data and an int variable for size. Please write functions below
- - constructor: initialize `data` to nullptr and `size` to 0.
- - destructor: delete the dynamically allocated memory. Be careful to only delete if you previously created dynamic memory allocation. How can you detect this?
- - copy constructor: copy the data and size using deep copy!
- - push_back: add a new item to the end of the string. Note that you first need to create a new dynamic array for the new size, and get rid of the previously allocated memory.
+Implement a class called `MyString` similar to std::String. The class has a dynamic array for data and an int variable for size. Please write functions below
+ - constructor: Initialize `data` to nullptr and `size` to 0.
+ - destructor: Delete the dynamically allocated memory. Be careful to only delete if you previously created dynamic memory allocation. How can you detect this?
+ - copy constructor: Copy the data and size using deep copy!
+ - push_back: Add a new item to the end of the string. Note that you first need to create a new dynamic array for the new size, and get rid of the previously allocated memory.
  - pop_back: Remove the last item. Don't forget to handle the case where the string is empty.
+ - size: Returns the value of size_.
+ - data: Returns the value of data_.
+ - empty: Return true if `MyString` is empty.
  
  Hint: resize the char array and use std::copy()!
 
 ```c++
 class MyString
 {
+private:
+    char* data_;
+    int size_;
 public:
-    char* data;
-    int size;
     MyString();
     ~MyString();
     MyString(const MyString&);
     void push_back(char);
     void pop_back();
+    int size();
+    char* data();
+    bool empty();
 };
 ```
 
@@ -194,13 +202,13 @@ s1.push_back('5');
 s1.push_back('3');
 s1.push_back('8');
 s1.push_back('!');
-std::cout << "s1: " << s1.data << std::endl;
+std::cout << "s1: " << s1.data() << std::endl;
 
 MyString s2 = s1;
 s2.pop_back();
 s2.push_back('?');
-std::cout << "s1: " << s1.data << std::endl;
-std::cout << "s2: " << s2.data << std::endl;
+std::cout << "s1: " << s1.data() << std::endl;
+std::cout << "s2: " << s2.data() << std::endl;
 ```
 Expected output:
 ```
