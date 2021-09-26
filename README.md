@@ -163,11 +163,12 @@ bazel test tests:q5_student_test
 ```
 ## Question 6 (20 Points. Easy)
 Implement a class called `MyString` similar to std::String. The class have a dynamic array for data and an int variable for size. Please write functions below
- - constructor
- - destructor
- - copy constructor
- - push_back
- - pop_back
+ - constructor: initialize `data` to nullptr and `size` to 0.
+ - destructor: release the memory for 'data' and print "Delete!".
+ - copy constructor: copy the data and size using deep copy!
+ - push_back: append a character!
+ - pop_back: remove the last character!
+ Hint: resize the char array and use std::copy()!
 
 ```c++
 class MyString
