@@ -98,7 +98,6 @@ void SinglyLinkedList::push_back(int i) {
   auto back_ptr = GetBackPointer();
   auto newNode = new ListNode(i);
   back_ptr->next = newNode;
-  my_size++;
 }
 
 void SinglyLinkedList::pop_back() {}
