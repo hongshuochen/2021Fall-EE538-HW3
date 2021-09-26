@@ -36,7 +36,7 @@ void PrintPointByRef(Point &p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << 
 ```
 For each of the following snippets, please write down which function(s) will be called (including constructors):
 
-If there is no function to be called, please give some explanations.
+If there is an error anywhere in the snippet, please indicate and give some explanations.
 
 E.g. Snippet: 
 ```c++
