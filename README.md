@@ -3,12 +3,12 @@
 
 - Please clone the repository, edit [README.md](README.md) to answer the questions, and fill up functions to finish the hw.
 - For non-coding questions, you will find **Answer** below each question. Please write your answer there.
-- For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
+- For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and test in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
 - Deadline: Tuesday, October 5th, at 11:59 PM (PDT)
 - Total: 120 points. 100 points is considered full credit.
 
-## Question 1 (5 Points. Easy)
+## Question 1 (10 Points. Easy)
 
 Please describe circumstances when each option is preferred:
 
@@ -19,21 +19,21 @@ Please describe circumstances when each option is preferred:
 
 Answer:
 
-## Question 2 (5 Points. Easy)
+## Question 2 (10 Points. Easy)
 
-In what cases is it preferred to use a list rather than a vector? (Let’s assume cache miss is not an issue).
-
-Answer:
-
-What is the difference between std::string and std::vector?
+- In what cases is it preferred to use a list rather than a vector? (Let’s assume cache miss is not an issue).
 
 Answer:
 
-What is the difference between std::queue, std::stack, and std::vector?
+- What is the difference between std::string and std::vector?
 
 Answer:
 
-Suppose we want to sort a std::vector<int>, but we cannot use std::sort. Instead, can we use std::set<int> to sort the items in the vector by putting them in the set first? Please explain under what conditions we can or we cannot?
+- What is the difference between std::queue, std::stack, and std::vector?
+
+Answer:
+
+- Suppose we want to sort a std::vector<int>, but we cannot use std::sort. Instead, can we use std::set<int> to sort the items in the vector by putting them in the set first? Please explain under what conditions we can or we cannot?
 
 Answer:
  
@@ -45,9 +45,9 @@ Implement in the following function
 
 `ResultCode CPPLib::vector_commander(std::vector<int>& v, int left, int right, int find_value, Command command)`
 
-- If `Command` is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
-- If `Command` is `kFind`, returns `kSuccess` if value `find_value` existed in the range [left, right); otherwise, it returns `kFindError`
-- If `command` is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
+- If command is `kSort`, it sorts items [left, right) in the vector and returns `kSuccess` if the given left and right indices were valid; otherwise, returns `kIndexError`
+- If command is `kFind`, returns `kSuccess` if value `find_value` exists in the range [left, right); otherwise, it returns `kFindError`
+- If command is `kErase`, it removes the item whose index is `left` from the vector if the index `left` was valid and returns `kSuccess`; otherwise, returns `kIndexError`
 - Hints: you can use `std::sort()` and `std::find()`. Use a switch/case statement.
  
 Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
@@ -58,7 +58,7 @@ bazel test tests:q3_student_test
 
 ## Question 4 (10 Points. Medium)
 
-Now we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
+Suppose we have a class `Point`, and function `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
 ```c++
 class Point {
  public:
@@ -157,117 +157,63 @@ Please create your test cases and run the following command to verify the functi
 ```
 bazel test tests:q5_student_test
 ```
-## Question 6 (?? Points. Easy)
-
-Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.
-
-Both of the Car_shallow and Car_deep has one member vector pointer tires.
-
-- Student_shallow
-  - Write a **default constructor** to initialize tires to a vector with four 10. 
-  - Write a **parameterized constructor** to initialize vector to desired tire pressures.
-
-- Student_deep
-  - Write a **default constructor** to initialize tires to a vector with four 10. 
-  - Write a **parameterized constructor** to initialize vector to desired tire pressures.
-  - Write a **destructor** to print "Delete Car_deep" and delete the integer pointer
-  - Write a **copy constructor** with **deep copy**
-  - Write a **copy assignment operator** with **deep copy**
-
-Hint: How to create a vector
-tires = new std::vector<int>();
+## Question 6 (20 Points. Easy)
+Implement a class called `MyString` similar to std::String. The class have a dynamic array for data and an int variable for size. Please write functions below
+ - constructor
+ - destructor
+ - copy constructor
+ - push_back
+ - pop_back
 
 ```c++
-class Car_shallow
+class MyString
 {
 public:
-    std::vector<int>* tires;
-    Car_shallow();
-    Car_shallow(int,int,int,int);
-    void print();
-};
-class Car_deep
-{
-public:
-    std::vector<int>* tires;
-    Car_deep();
-    Car_deep(int,int,int,int);
-    ~Car_deep();
-    Car_deep(const Car_deep&);
-    Car_deep& operator=(const Car_deep&);
-    void print();
+    char* data;
+    int size;
+    MyString();
+    ~MyString();
+    MyString(const MyString&);
+    void push_back(char);
+    void pop_back();
 };
 ```
 
 Example:
 ```c++
-std::cout << "Shallow" << std::endl;
-Car_shallow a(11,12,13,14);
-Car_shallow b = a;
-Car_shallow c;
-c = a;
-std::cout << "Before" << std::endl;
-a.print();
-b.print();
-c.print();
-for (auto& p: (*a.tires))
-  p *= 2;
-std::cout << "After" << std::endl;
-a.print();
-b.print();
-c.print();
+MyString s1;
+s1.push_back('E');
+s1.push_back('E');
+s1.push_back('5');
+s1.push_back('3');
+s1.push_back('8');
+s1.push_back('!');
+std::cout << "s1: " << s1.data << std::endl;
 
-std::cout << "Deep" << std::endl;
-Car_deep a_deep(11,12,13,14);;
-Car_deep b_deep = a_deep;
-Car_deep c_deep;
-c_deep = a_deep;
-std::cout << "Before" << std::endl;
-a_deep.print();
-b_deep.print();
-c_deep.print();
-for (auto& p: (*a_deep.tires))
-  p *= 2;
-for (auto& p: (*b_deep.tires))
-  p *= 3;
-std::cout << "After" << std::endl;
-a_deep.print();
-b_deep.print();
-c_deep.print();
+MyString s2 = s1;
+s2.pop_back();
+s2.push_back('?');
+std::cout << "s1: " << s1.data << std::endl;
+std::cout << "s2: " << s2.data << std::endl;
 ```
 Expected output:
 ```
-Shallow
-Before
-11 12 13 14 
-11 12 13 14 
-11 12 13 14 
-After
-22 24 26 28 
-22 24 26 28 
-22 24 26 28 
-Deep
-Before
-11 12 13 14 
-11 12 13 14 
-11 12 13 14 
-After
-22 24 26 28 
-33 36 39 42 
-11 12 13 14 
-Delete Car_deep
-Delete Car_deep
-Delete Car_deep
+s1: EE538!
+s1: EE538!
+s2: EE538?
+Delete!
+Delete!
 ```
 
 Write several tests using GTest for your function in [tests/q6_student_test.cc](tests/q6_student_test.cc).
 
 Please create your test cases and run the following command to verify the functionality of your program. You don't need to test the destructor.
+
 ```
 bazel test tests:q6_student_test
 ```
 
-## Question 7 (?? Points. Medium)
+## Question 7 (15 Points. Medium)
 Given an expression string, find if the input has valid brackets (i.e. { } or [ ] or ( ) ). Function is defined as ```bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​)```
 
 An input expression is valid if:
@@ -310,7 +256,7 @@ Please compute the time complexity of your implementation.
 
 Answer:
 
-## Question 8 (?? Points. Medium)
+## Question 8 (20 Points. Medium)
 
 Assume `ListNode`, `SinglyLinkedList` are given and all member functions are already implemented:
 
@@ -388,10 +334,13 @@ public:
      float standard_deviation;
     };
    ```
-## Question 9 (Bonus 10 Points. Medium)
+
+# Optional
  
-Repeat Question 8 for a stack
- 
-## Question 10 (Bonus 10 Points. Medium)
+## Question 9 (Medium)
 
 Write your own class to recreate std::queue. Use a private member of type std::vector and add member functions such as push, pop, top, size, and empty. Also, implement the copy constructor.
+
+## Question 10 (Medium)
+ 
+Repeat Question 8 for a stack.
