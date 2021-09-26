@@ -290,7 +290,7 @@ public:
 ```
 1. Write a copy constructor for SinglyLinkedList class.
 
-2. Write a new parameterized constructor `SinglyLinkedList(const std::vector<int> &v);` that takes a vector as an input and creates a linked list based on that. Note that your constructor should assign a valid value for `head_`.
+2. Write a new parameterized constructor `SinglyLinkedList(const std::vector<int> &v)` that takes a vector as an input and creates a linked list based on that. Note that your constructor should assign a valid value for `head_`.
 
    Example: 
 
@@ -298,7 +298,7 @@ public:
 
    The created list: 1->4->5->6->10, and `head_` will point to the first node with value 1
 
-3. Write a function `std::vector convert_to_vector();` that converts the list into a vector. 
+3. Write a function `std::vector convert_to_vector()` that converts the list into a vector. 
 
    Example:
 
@@ -306,7 +306,7 @@ public:
 
    Output: a vector with value: {1, 4, 5, 6, 10}
 
-4. Write a function`ListNode *erase(int i);`Erase element i from the list if it exists and returns a pointer to item i-1. If item i doesn't exist, returns nullptr. The first item in the list has index 0. 
+4. Write a function`ListNode *erase(int i)` to erase element `i` from the list if it exists and returns a pointer to item `i-1`. If item `i` doesn't exist, returns `nullptr`. The first item in the list has index `0`. 
 
    Example: 
 
@@ -314,7 +314,7 @@ public:
 
    Output: 1 -> 5 -> 20, return value: a pointer to element 5.
 
-5. Write a function `std::map<int, int> histogram();` Returns a histogram of the items in the list.
+5. Write a function `std::map<int, int> histogram()` to return a histogram of the items in the list.
 
    Example:
 
@@ -322,7 +322,7 @@ public:
 
    Output: {{1,2}, {4,1}, {5,2}, {32,1}}
 
-6. Write a function `void remove_duplicates();` Removes duplicate elements and only keeps the first one.
+6. Write a function `void remove_duplicates()` to remove duplicate elements and only keeps the first one.
 
    Example:
 
@@ -330,7 +330,7 @@ public:
 
    Output: 1 -> 5 -> 20 -> 4 -> 32
 
-7. Assuming the following struct is defined. Write a function `Statistics calculate_statistics()` which iterates through the list and returns a variable of type Statistics which has the correct values for the items in the list.
+7. Assuming the following struct is defined. Write a function `Statistics calculate_statistics()` which iterates through the list and returns a variable of type `Statistics` which has the correct values for the items in the list.
 
    ```c++
    struct Statistics {
