@@ -288,9 +288,8 @@ public:
     void print();
 };
 ```
-```
-// 1. Write a copy constructor for the list.
- 
+```c++
+ // 1. Write a copy constructor for SinglyLinkedList class.
  
  // 2. Write a new parameterized constructor that takes a vector as an input and
  // crates a linked list based on that. Note that your constructor should
