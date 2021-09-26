@@ -54,7 +54,6 @@ public:
   void print();
 
   ListNode *head_;
-  int my_size;
 };
 
 
