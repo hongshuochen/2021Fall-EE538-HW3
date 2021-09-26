@@ -310,7 +310,7 @@ Please compute the time complexity of your implementation.
 
 Answer:
 
-Question 8 (20 Points. Medium):
+## Question 8 (20 Points. Medium)
 
 Assume `ListNode`, `SinglyLinkedList` are given and all member functions are already implemented:
 
@@ -388,4 +388,10 @@ public:
      float standard_deviation;
     };
    ```
+## Question 9 (20 Points. Medium)
+ 
+Repeat Question 8 for a stack
+ 
+## Question 10 (20 Points. Medium)
 
+Write your own class to recreate std::queue. Use a private member of type std::vector and add member functions such as push, pop, top, size, and empty. Also, implement the copy constructor.
