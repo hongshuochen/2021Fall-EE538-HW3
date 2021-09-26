@@ -73,7 +73,7 @@ void PrintPointByVal(Point p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << s
 void PrintPointByPtr(Point *p) { std::cout << "x=" << p->x_ << ", y=" << p->y_ << std::endl; }
 void PrintPointByRef(Point &p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << std::endl; }
 ```
-For each of the following snippets, please write down which function(s) will be called (including constructors):
+For each of the following snippets, please write down which function(s) will be called (including constructors, the destructor):
 
 If there is an error anywhere in the snippet, please indicate and give some explanations.
 
@@ -288,8 +288,7 @@ public:
     void print();
 };
 ```
-
-1. Write a copy constructor for the list.
+1. Write a copy constructor for SinglyLinkedList class.
 
 2. Write a new parameterized constructor `SinglyLinkedList(const std::vector<int> &v);` that takes a vector as an input and creates a linked list based on that. Note that your constructor should assign a valid value for `head_`.
 
