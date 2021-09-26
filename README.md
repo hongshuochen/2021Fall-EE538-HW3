@@ -5,10 +5,10 @@
 - For non-coding questions, you will find **Answer** below each question. Please write your answer there.
 - For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
-- Deadline: Friday, March 5th by 23:59 pm
+- Deadline: 11:59 PM, Tuesday, October 5th (PDT)
 - Total: 105 points. 100 points is considered full credit.
 
-## Question 1 (20 Points. Easy)
+## Question 1 (10 Points. Easy)
 
 Please describe circumstances when each option is preferred:
 
@@ -19,72 +19,65 @@ Please describe circumstances when each option is preferred:
 
 Answer:
 
-## Question 2 (25 Points. Easy)
-Part 1: (15 pts) \
-Please declare a class called `Point` which has private int attributes `x_`, `y_` as its coordinates in `cpplib.h`. Also declare constructors, destructor, and member methods `GetX()` and `GetY()` there. \
-Define constructors, destructor, and member methods `GetX()` and `GetY()` in `cpplib.cc`. Tips: Definitions outside the class should begin with `Point::`
-- Write a default constructor that initializes `x_`, `y_` to `0`, `0`.
-- Write a constructor that takes only one parameter `x`. Use that parameter to initialize `x_` and set `y_` to `0`.
-- Write a constructor that takes two parameters `x` and `y`.
-- Write a copy constructor.
-- Write a destructor that prints “Destructor is called!”.
-- Write `GetX()` and `GetY()` functions to return the private attributes.
-- Write several tests using GTest for your function in [tests/q2_student_test.cc](tests/q2_student_test.cc).
+## Question 2 (10 Points. Easy)
 
-Part 2: (10 pts) \
-Assume all parameters in class `Point` are public.
-Assume all constructors and function `PrintPoint()` are given. (You do not need to implement `PrintPoint()`) \
-Assume the destructor will not be called.
+Now we have a class `Point`, and function `PrintPoint()`:
+```
+class Point {
+ public:
+  int x_;
+  int y_;
+  Point() : x_(0), y_(0) {}
+  Point(int x, int y) : x_(x), y_(y) {}
+};
+void PrintPointByVal(Point p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << std::endl; }
+void PrintPointByPtr(Point *p) { std::cout << "x=" << p->x_ << ", y=" << p->y_ << std::endl; }
+void PrintPointByRef(Point &p) { std::cout << "x=" << p.x_ << ", y=" << p.y_ << std::endl; }
+```
+For each of the following snippets, please write down which function(s) will be called (including which constructors, which functions):
 
-For each of the following snippets, please write down which function(s) will be called (including which constructors, which functions, and passing which format of parameters):
-
-E.g. Snippet: Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point &p);`
+E.g. Snippet: 
 ```c++
 Point p1(1, 2);
-PrintPoint (p1);
+PrintPointByRef(p1);
 ```
 Answer: 
-1. A parameterized constructor of Class `Point`
-2. `PrintPoint()` passing by reference
+1. Parameterized constructor of Class `Point`
+2. `PrintPointByRef()`
 
 Snippet 1:
-Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point p);`
 ```c++
 Point p1;
-PrintPoint (p1);
+Point p2 = P1;
 ```
 Answer:
 
 Snippet 2:
-Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point &p);`
 ```c++
 Point p1;
-PrintPoint(p1);
+PrintPointByVal(p1);
 ```
 Answer:
 
 Snippet 3:
-Assuming the declaration of `PrintPoint()` is `void PrintPoint(const Point &p);`
 ```c++
-Point p1;
-PrintPoint(p1);
+Point *ptr;
+PrintPointByPtr(ptr);
 ```
 Answer:
 
 Snippet 4:
-Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point *p);`
 ```c++
 Point *ptr;
-PrintPoint(ptr);
+ptr.~Point();
 ```
 Answer:
 
 Snippet 5:
-Assuming the declaration of `PrintPoint()` is `void PrintPoint(Point *p);`
 ```c++
-Point *ptr;
-ptr = new Point;
-PrintPoint(ptr);
+Point *ptr = new Point(1, 2);
+PrintPointByPtr(ptr);
+ptr.~Point();
 ```
 Answer:
 
