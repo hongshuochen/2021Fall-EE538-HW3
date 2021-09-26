@@ -72,8 +72,9 @@ Answer:
 
 Snippet 4:
 ```c++
-Point *ptr;
-ptr->~Point();
+#include <iostream>
+Point* ptr = new Point;
+std::cout << *ptr.x_;
 ```
 Answer:
 
