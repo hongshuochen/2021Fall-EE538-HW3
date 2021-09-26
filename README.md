@@ -344,10 +344,11 @@ public:
    ```
 
 # Optional
- 
+The following questions are optional. This means you do not have to submit the answer to them. They will not be graded, and we may not provide solutions for them. They are here so that you can practice on your own.
+
 ## Question 1 (Medium)
 
-Write your own class to recreate std::queue. Use a private member of type std::vector and add member functions such as push, pop, top, size, and empty. Also, implement the copy constructor.
+Write a new class called MyQueue to recreate std::queue. Use a private member of type std::vector and add member functions such as push, pop, top, size, and empty. Also, implement the copy constructor.
 
 ## Question 2 (Medium)
  
