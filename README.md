@@ -60,7 +60,7 @@ bazel test tests:q3_student_test
 
 ## Question 4 (10 Points. Medium)
 
-Now we have a class `Point`, and functions `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
+Suppose we have a class `Point`, and functions `PrintPointByVal()`, `PrintPointByPtr()`, and `PrintPointByRef()`:
 ```c++
 class Point {
  public:
