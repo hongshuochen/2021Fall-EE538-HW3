@@ -121,7 +121,7 @@ Snippet 5:
 ```c++
 Point *ptr = new Point(1, 2);
 PrintPointByPtr(ptr);
-ptr->~Point();
+delete ptr;
 ```
 Answer:
 
