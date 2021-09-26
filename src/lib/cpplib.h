@@ -22,16 +22,19 @@ class CPPLib {
 // q6
 class MyString
 {
+private:
+    char* data_;
+    int size_;
 public:
-    char* data;
-    int size;
     MyString();
     ~MyString();
     MyString(const MyString&);
     void push_back(char);
     void pop_back();
+    int size();
+    char* data();
+    bool empty();
 };
-
 
 struct ListNode {
   int val;
