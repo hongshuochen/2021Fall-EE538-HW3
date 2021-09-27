@@ -4,7 +4,7 @@
 // Question 3
 
 // Question 5
-void CPPLib::mergeArray(std::vector<int>& input1, std::vector<int>& input2){
+void CPPLib::mergeArray(std::vector<int>& input1, int m, std::vector<int>& input2, int n){
 
 }
 

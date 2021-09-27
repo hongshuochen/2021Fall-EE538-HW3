@@ -13,7 +13,7 @@ class CPPLib {
   //q3
 
   //q5
-  void mergeArray(std::vector<int>& input1, std::vector<int>& input2);
+  void mergeArray(std::vector<int>& input1, int m, std::vector<int>& input2, int n);
   //q8
   bool CheckValidExpression(const std::string& a);
 };
